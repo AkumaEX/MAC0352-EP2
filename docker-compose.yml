@@ -1,0 +1,21 @@
+version: '3'
+
+services: 
+  server:
+    image: python
+    working_dir: /home
+    volumes: 
+      - .:/home
+    command: python3 main.py generator_out.txt debug
+  client1:
+    image: python
+    working_dir: /home
+    volumes:
+      - .:/home
+    command: python3 main.py debug
+  client2:
+    image: python
+    working_dir: /home
+    volumes:
+      - .:/home
+    command: python3 main.py debug
